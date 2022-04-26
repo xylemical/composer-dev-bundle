@@ -6,7 +6,7 @@
   "homepage": "https://github.com/xylemical/composer-dev-bundle",
   "autoload": {
     "psr-4": {
-      "Xylemical\\Development\\Composer\\": "src/"
+      "Xylemical\\Development\\": "src/"
     }
   },
   "extra": {
