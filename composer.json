@@ -1,6 +1,6 @@
 {
   "name": "xylemical/composer-dev-bundle",
-  "type": "composer-plugin",
+  "type": "library",
   "license": "MIT",
   "description": "Provides support for development.",
   "homepage": "https://github.com/xylemical/composer-dev-bundle",
