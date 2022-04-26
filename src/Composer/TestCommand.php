@@ -48,14 +48,14 @@ class TestCommand extends BaseCommand {
    * {@inheritdoc}
    */
   protected function execute(InputInterface $input, OutputInterface $output) {
-    $targets = explode(',', $input->getArgument('targets'));
+    $targets = array_filter(explode(',', $input->getArgument('targets')));
     if (empty($targets)) {
       $targets = array_keys(static::REQUIRED);
     }
 
     $configs = static::REQUIRED + static::OPTIONAL;
     foreach ($targets as $target) {
-      if ($configs[$target]) {
+      if (isset($configs[$target])) {
         if ($result = $this->testTarget($target, $configs[$target])) {
           return $result;
         }
@@ -110,6 +110,8 @@ class TestCommand extends BaseCommand {
       $this->getCmd($target),
       $this->getConfiguration($config)
     ]);
+
+    $this->getIO()->info(sprintf('<info>Executing %s</info>', $path));
 
     $output = [];
     $result = $process->execute($path, $output, getcwd());
