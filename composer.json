@@ -9,9 +9,6 @@
       "Xylemical\\Development\\": "src/"
     }
   },
-  "extra": {
-    "class": "Xylemical\\Development\\Composer\\Plugin"
-  },
   "require": {
     "php": ">7.4",
     "composer-plugin-api": ">2.0",
@@ -26,9 +23,5 @@
     "composer/composer": ">2.3"
   },
   "minimum-stability": "dev",
-  "prefer-stable": true,
-  "scripts": {
-    "tests": "vendor/bin/phpunit && vendor/bin/phpstan analyse && vendor/bin/phpcs",
-    "test-coverage": "php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-html report"
-  }
+  "prefer-stable": true
 }
